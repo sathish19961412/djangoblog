@@ -4,10 +4,11 @@ from django.urls import reverse
 # Create your views here.
 
 def index(request):
-    return HttpResponse("<h2>Hello World,You are at blog's index</h2>")
+    blog_title='Latest Posts'
+    return render(request,'blog/index.html',{'blog_title':blog_title})
 
 def details(request,post_id):
-    return HttpResponse(f"<h2>You are viewing post .And ID is {post_id}</h2>")
+    return render(request,'blog/detail.html')
 
 def old_url_redirect(request):
     return redirect(reverse("blogapp:new_page_url"))
