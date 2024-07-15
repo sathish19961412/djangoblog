@@ -5,7 +5,13 @@ from django.urls import reverse
 
 def index(request):
     blog_title='Latest Posts'
-    return render(request,'blog/index.html',{'blog_title':blog_title})
+    posts=[
+        {'id':1,'title':'Post 1','content':'Content Of Posts 1'},
+        {'id':2,'title':'Post 2','content':'Content Of Posts 2'},
+        {'id':3,'title':'Post 3','content':'Content Of Posts 3'},
+        {'id':4,'title':'Post 4','content':'Content Of Posts 4'},
+    ]
+    return render(request,'blog/index.html',{'blog_title':blog_title,'posts':posts})
 
 def details(request,post_id):
     return render(request,'blog/detail.html')
