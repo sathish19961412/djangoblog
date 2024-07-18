@@ -13,11 +13,11 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <img src="https://via.placeholder.com/300" class="img-fluid" alt="...">
+                                    <img src="{{post.img_url}}" class="img-fluid" alt="...">
                                 </div>
                                 <div class="col-md-8">
                                     <h5 class="card-title">{{post.title}}</h5>
-                                    <p class="card-text">{{post.content}}</p>
+                                    <p class="card-text">{{post.content|truncatechars:30}}</p>
                                     <div class="d-flex justify-content-between">
                                         <a href="{% url 'blogapp:detail' post_id=post.id %}">Read More</a>
                                         <a class="text-decoration-none text-dark fw-bold" href="#">Sports</a>
