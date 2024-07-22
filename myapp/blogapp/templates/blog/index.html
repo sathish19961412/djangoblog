@@ -19,8 +19,8 @@
                                     <h5 class="card-title">{{post.title}}</h5>
                                     <p class="card-text">{{post.content|truncatechars:30}}</p>
                                     <div class="d-flex justify-content-between">
-                                        <a href="{% url 'blogapp:detail' post_id=post.id %}">Read More</a>
-                                        <a class="text-decoration-none text-dark fw-bold" href="#">Sports</a>
+                                        <a href="{% url 'blogapp:detail' slug=post.slug %}">Read More</a>
+                                        <a class="text-decoration-none text-dark fw-bold" href="#">{{post.category.name}}</a>
                                     </div>
                                 </div>
                             </div>
